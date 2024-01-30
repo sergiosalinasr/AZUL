@@ -1,0 +1,37 @@
+{
+    "log_file" : "/tmp/BORRAR/TXTFiles/AZULLM.log",
+    "log_file_INFO" : "/tmp/BORRAR/TXTFiles/AZULLM_INFO.log",
+    "log_file_WARNING" : "/tmp/BORRAR/TXTFiles/AZULLM_W.log",
+    "log_file_ERROR" : "/tmp/BORRAR/TXTFiles/AZULLM_E.log",
+    "maxBytes" : 1024,
+    "backupCount" : 3,
+    "level" : "INFO",
+    "encoding" : "utf-8",
+    "path_arch_json" : "/tmp/BORRAR/JSONFiles/",
+    "tmp_BORRAR" : "/tmp/BORRAR/",
+    "TXTFiles" : "TXTFiles/",
+    "JSONFiles" : "JSONFiles/",
+    "BINFiles" : "BINFiles/",
+
+    "textos_csv": {
+      "textos_csv": "textos.csv",
+      "embedding_csv": "embedding.csv",
+      "path_arch_csv" : "/tmp/BORRAR/TXTFiles/"
+    },
+    "craw": {
+      "textos_csv": "textos.csv",
+      "path_arch_csv": "/tmp/BORRAR/TXTFiles/",
+      "textos_json": "textos.json"
+    },
+    "preg_resp": {
+      "n_resultados": 5,
+      "textos_csv": "textos.csv",
+      "path_arch_csv": "/tmp/BORRAR/TXTFiles/",
+      "textos_json": "textos.json"
+    },
+    "arch_bin": {
+      "embed_pkl": "embed.pkl",
+      "path_arch_bin": "/tmp/BORRAR/BINFiles/"
+    },
+    "FinConfig" : "FinConfig"
+}

@@ -1,0 +1,11 @@
+Para inciar la aplicación, se debe:
+- configurar el archivo cfg.py así:
+#!/usr/bin/env python
+api_key = {
+    "OPENAI_API_KEY": "aqui-el-apikey",
+}
+use_anonymous = True
+- Se ejecuta desde la carpeta AZUL así: "python ./src/app.py", lo cual deja activo el sistema en localhost:4000
+- Si es desde ddocker, ejecutar: 
+Construir la imagen con docker build
+docker run -it -p 4000:4000 -d flaskapp 

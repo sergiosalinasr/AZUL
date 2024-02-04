@@ -1,15 +1,24 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 app = Flask(__name__)
 
 import m_crawler
 import m_embed_text
 import m_resp_pregunta
+import m_auth
 
 import inspect
 #import logging
 import m_logging
 import m_carga_config
+
+app = Flask(__name__)
+# Habilita CORS para toda la aplicación, lo cual es útil para el desarrollo.
+# Para producción, es mejor especificar los orígenes permitidos.
+CORS(app)
+
+# Tus rutas y lógica de la aplicación aquí
 
 configuracion = m_carga_config.cargar_configuracion()
 
@@ -61,6 +70,20 @@ def resp_pregunta():
     n_resultados = request.json['n_resultados']
 
     dict_respuesta = m_resp_pregunta.pregunta_y_respuesta(txt_pregunta, embeddings_pkl, n_resultados)
+
+    return jsonify(dict_respuesta)
+
+# Esta endpint es para colaborar en la aplicación Angular "pacientes", que necesita un auth
+@app.route('/auth', methods=['POST'])
+def auth():
+    
+    m_logging.msg_logging(f'M: {inspect.getmodulename(__file__)} F: {inspect.currentframe().f_code.co_name}')
+    print(request.json)
+
+    usuario = request.json['usuario']
+    password = request.json['password']
+
+    dict_respuesta = m_auth.auth(usuario, password)
 
     return jsonify(dict_respuesta)
 
